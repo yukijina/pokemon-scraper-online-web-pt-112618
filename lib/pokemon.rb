@@ -11,6 +11,7 @@ class Pokemon
   
   def self.save(name, type, db)
     db.execute("INSERT INTO pokemon (name,type) VALUES (?, ?)",name, type)
+    binding.pry
   end
   
   def self.find(id, db)
@@ -18,10 +19,14 @@ class Pokemon
     Pokemon.new(id:id, name:poke_array[1], type:poke_array[2], db:db)
   end
 
-  def BONUS
-    self.hp = 60
-    self
+  def BONUS(db)
+    db.execute("UPDATE pokemon SET hp = 60")
   end
+  
+  def alter_hp(hp_score, db)
+    db.execute("UPDATE pokemon SET hp = ? WHERE name = ?")  
+  end 
+  
   
   # describe "BONUS" do
 
