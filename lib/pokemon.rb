@@ -18,14 +18,6 @@ class Pokemon
     Pokemon.new(id:id, name:poke_array[1], type:poke_array[2], db:db)
   end
 
-  def BONUS(db)
-    db.execute("UPDATE pokemon SET hp:60")
-  end
-  
-  def alter_hp(hp_score, db)
-    db.execute("UPDATE pokemon SET hp = ? WHERE name = ?")  
-  end 
-  
   
   # describe "BONUS" do
 
