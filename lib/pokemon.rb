@@ -19,7 +19,7 @@ class Pokemon
   end
 
   def BONUS(db)
-    db.execute("UPDATE pokemon SET hp = 60")
+    db.execute("UPDATE pokemon SET hp:60")
   end
   
   def alter_hp(hp_score, db)
